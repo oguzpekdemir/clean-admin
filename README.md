@@ -57,7 +57,6 @@ Bu proje şu anda CDN tabanlı bir yapı ile (importmap) tarayıcıda doğrudan 
 src/
 ├── components/    # Tüm sayfa ve UI bileşenleri
 ├── context/       # Tema ve Layout yönetimi (Context API)
-├── services/      # Mock veri servisleri ve API simülasyonu
 ├── App.tsx        # Ana uygulama ve yönlendirme mantığı
 └── index.tsx      # Giriş noktası
 ```
