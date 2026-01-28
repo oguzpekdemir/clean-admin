@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Primary Meta Tags -->
+    <title>CleanAdmin | Ücretsiz React Yönetim Paneli Şablonu</title>
+    <meta name="title" content="CleanAdmin | Ücretsiz React Yönetim Paneli Şablonu">
+    <meta name="description" content="Açık kaynak, modern ve responsive React yönetim paneli. CRM, E-ticaret ve Analitik dashboardları içerir. Tailwind CSS ile tasarlandı.">
+    <meta name="keywords" content="react admin template, free dashboard, tailwind css admin, open source dashboard, react yönetim paneli, clean admin">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="CleanAdmin Team">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cleanadmin.online/">
+    <meta property="og:title" content="CleanAdmin - Profesyonel & Ücretsiz Yönetim Paneli">
+    <meta property="og:description" content="Projeleriniz için hızlı, modern ve karanlık mod destekli başlangıç kiti.">
+    <meta property="og:image" content="https://cleanadmin.online/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cleanadmin.online/">
+    <meta property="twitter:title" content="CleanAdmin - Profesyonel & Ücretsiz Yönetim Paneli">
+    <meta property="twitter:description" content="Projeleriniz için hızlı, modern ve karanlık mod destekli başlangıç kiti.">
+    <meta property="twitter:image" content="https://cleanadmin.online/og-image.jpg">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              border: "hsl(var(--border))",
+              input: "hsl(var(--input))",
+              ring: "hsl(var(--ring))",
+              background: "hsl(var(--background))",
+              foreground: "hsl(var(--foreground))",
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F9FAFB;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Dark mode overrides - Pure Black */
+        .dark body {
+            background-color: #000000;
+            color: #EDEDED;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E5E7EB;
+            border-radius: 10px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #262626;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D1D5DB;
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #404040;
+        }
+        
+        /* Utility for hiding scrollbar but keeping functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react-dom": "https://esm.sh/react-dom@^19.2.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="antialiased text-gray-900 dark:text-gray-100 transition-colors duration-200 selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
