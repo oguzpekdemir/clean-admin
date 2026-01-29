@@ -119,7 +119,7 @@ const EcommerceDashboard: React.FC = () => {
                             <h3 className="text-lg font-bold text-gray-900 dark:text-white">Gelir Analizi</h3>
                             <p className="text-sm text-gray-500 dark:text-neutral-500">Yıllık satış performansı</p>
                         </div>
-                        <button className="text-sm font-bold text-black dark:text-white bg-gray-100 dark:bg-neutral-800 px-4 py-2 rounded-xl">2023</button>
+                        <button className="text-sm font-bold text-black dark:text-white bg-gray-100 dark:bg-neutral-800 px-4 py-2 rounded-xl">2026</button>
                     </div>
                     
                     {/* CSS Area Chart Simulation */}
@@ -130,10 +130,13 @@ const EcommerceDashboard: React.FC = () => {
                             {/* Bars for volume */}
                             {[30, 45, 35, 60, 50, 75, 65, 85, 70, 60, 80, 95].map((h, i) => (
                                 <div key={i} className="flex-1 px-1 h-full flex flex-col justify-end group cursor-pointer z-10">
-                                    <div className="w-full bg-blue-100 dark:bg-blue-900/30 rounded-t-sm group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors relative" style={{ height: `${h}%` }}>
-                                        <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black dark:bg-white text-white dark:text-black text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                                            ₺{h * 1000}
-                                        </div>
+                                    <div 
+                                        className="w-full bg-blue-100 dark:bg-blue-900/30 rounded-t-sm group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors relative flex items-start justify-center pt-2" 
+                                        style={{ height: `${h}%` }}
+                                    >
+                                        <span className="text-[10px] font-bold text-blue-700 dark:text-blue-200 opacity-0 group-hover:opacity-100 transition-opacity">
+                                            {h}%
+                                        </span>
                                     </div>
                                 </div>
                             ))}
