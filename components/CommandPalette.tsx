@@ -5,7 +5,9 @@ import {
     Search, ArrowRight, LayoutDashboard, BarChart2, ShoppingCart, Users, Briefcase, 
     Camera, Image, Settings, Sun, Moon, LogOut, MessageSquare, Mail, Folder, 
     Calendar, CheckSquare, FileText, CreditCard, HelpCircle, Activity, Zap, 
-    FilePlus, Component, LayoutTemplate, PieChart, Table, Box, FormInput
+    FilePlus, Component, LayoutTemplate, PieChart, Table, Box, FormInput,
+    Palette, Sticker, CreditCard as CardIcon, Loader, MousePointerClick, CloudOff,
+    PaintBucket, Layers, Lock, ShieldCheck, FileSearch, BookOpen
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { ViewType } from '../App';
@@ -67,7 +69,20 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose, onNavi
     { id: 'page-faq', label: 'Sıkça Sorulan Sorular', group: 'Sayfalar', icon: HelpCircle, action: () => navTo('faq') },
     { id: 'page-activity', label: 'Aktivite Geçmişi', group: 'Sayfalar', icon: Activity, action: () => navTo('activities') },
     { id: 'page-integration', label: 'Entegrasyonlar', group: 'Sayfalar', icon: Zap, action: () => navTo('integrations') },
+    { id: 'page-docs', label: 'Dokümantasyon', group: 'Sayfalar', icon: BookOpen, action: () => navTo('docs') },
+    { id: 'page-search', label: 'Arama Sonuçları', group: 'Sayfalar', icon: FileSearch, action: () => navTo('search-results') },
+    { id: 'page-terms', label: 'Şartlar & Gizlilik', group: 'Sayfalar', icon: FileText, action: () => navTo('terms') },
     { id: 'page-blank', label: 'Boş Sayfa', group: 'Sayfalar', icon: FilePlus, action: () => navTo('blank') },
+
+    // --- Tasarım Sistemi (Design System) ---
+    { id: 'ds-colors', label: 'Renk Paleti', group: 'Tasarım Sistemi', icon: PaintBucket, action: () => navTo('colors') },
+    { id: 'ds-type', label: 'Tipografi & Fontlar', group: 'Tasarım Sistemi', icon: Palette, action: () => navTo('typography') },
+    { id: 'ds-shadows', label: 'Gölgeler & Sınırlar', group: 'Tasarım Sistemi', icon: Layers, action: () => navTo('shadows') },
+    { id: 'ds-icons', label: 'İkon Seti', group: 'Tasarım Sistemi', icon: Sticker, action: () => navTo('icons') },
+    { id: 'ds-buttons', label: 'Butonlar', group: 'Tasarım Sistemi', icon: MousePointerClick, action: () => navTo('buttons') },
+    { id: 'ds-cards', label: 'Kart Tasarımları', group: 'Tasarım Sistemi', icon: CardIcon, action: () => navTo('cards') },
+    { id: 'ds-empty', label: 'Boş Durumlar (Empty States)', group: 'Tasarım Sistemi', icon: CloudOff, action: () => navTo('empty-states') },
+    { id: 'ds-skeletons', label: 'İskelet (Loading) Yapılar', group: 'Tasarım Sistemi', icon: Loader, action: () => navTo('skeletons') },
 
     // --- Arayüz & Bileşenler (UI) ---
     { id: 'ui-widgets', label: 'Widget Kütüphanesi', group: 'Arayüz', icon: Box, action: () => navTo('widgets') },
@@ -80,6 +95,8 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose, onNavi
     // --- Sistem (System) ---
     { id: 'sys-theme', label: theme === 'light' ? 'Karanlık Moda Geç' : 'Aydınlık Moda Geç', group: 'Sistem', icon: theme === 'light' ? Moon : Sun, action: () => toggleTheme() },
     { id: 'sys-settings', label: 'Uygulama Ayarları', group: 'Sistem', icon: Settings, action: () => navTo('settings') },
+    { id: 'sys-lock', label: 'Ekranı Kilitle', group: 'Sistem', icon: Lock, action: () => navTo('lock-screen') },
+    { id: 'sys-2fa', label: '2FA Doğrulama (Demo)', group: 'Sistem', icon: ShieldCheck, action: () => navTo('2fa') },
     { id: 'sys-logout', label: 'Çıkış Yap', group: 'Sistem', icon: LogOut, action: () => navTo('login') },
   ], [theme, onNavigate, onClose, toggleTheme]);
 

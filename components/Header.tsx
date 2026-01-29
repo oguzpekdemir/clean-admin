@@ -1,14 +1,15 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Menu, Moon, Sun, Bell, AlertCircle, CheckCircle, Info, X } from 'lucide-react';
+import { Menu, Moon, Sun, Bell, LogOut } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 interface HeaderProps {
   onMenuClick: () => void;
   title?: string;
+  onLogout?: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onMenuClick, title = 'Panel' }) => {
+const Header: React.FC<HeaderProps> = ({ onMenuClick, title = 'Panel', onLogout }) => {
   const { theme, toggleTheme } = useTheme();
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
   const notificationRef = useRef<HTMLDivElement>(null);
@@ -44,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, title = 'Panel' }) => {
         </div>
       </div>
 
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-2 sm:space-x-4">
         <div className="hidden sm:flex items-center space-x-3">
           <span className="text-sm text-gray-500 dark:text-neutral-400 font-medium">Son Aktiviteler</span>
           <div className="flex -space-x-2">
@@ -112,6 +113,16 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, title = 'Panel' }) => {
                 </div>
             )}
         </div>
+
+        {/* Logout Button */}
+        <button 
+            onClick={onLogout}
+            className="p-2 rounded-xl text-gray-500 hover:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-800 transition-colors hover:text-rose-500 dark:hover:text-rose-500"
+            title="Çıkış Yap"
+            aria-label="Çıkış Yap"
+        >
+            <LogOut className="w-5 h-5" />
+        </button>
       </div>
     </header>
   );

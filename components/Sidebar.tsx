@@ -6,7 +6,9 @@ import {
   Settings, Search, X, Layers, Lock, Shield, AlertOctagon, 
   HelpCircle, CreditCard, PieChart, Grid, Type, Box, Table, 
   LayoutTemplate, LogOut, ChevronDown, Circle, Globe, Map,
-  UserPlus, Sliders, ChevronRight, Component, AppWindow, HardDrive
+  UserPlus, Sliders, ChevronRight, Component, AppWindow, HardDrive,
+  Palette, Sticker, CreditCard as CardIcon, Loader, MousePointerClick, CloudOff,
+  PaintBucket, FileSearch, ShieldCheck, BookOpen
 } from 'lucide-react';
 import { ViewType } from '../App';
 import { useLayout } from '../context/LayoutContext';
@@ -80,13 +82,18 @@ const MENU_SECTIONS: MenuSection[] = [
                 { label: 'Giriş Yap', id: 'login' as ViewType },
                 { label: 'Kayıt Ol', id: 'register' as ViewType },
                 { label: 'Şifre Sıfırla', id: 'forgot-password' as ViewType },
+                { label: 'Kilit Ekranı', id: 'lock-screen' as ViewType },
+                { label: '2FA Doğrulama', id: '2fa' as ViewType },
             ]
         },
         { 
             icon: Globe, 
             label: 'Sistem',
             children: [
+                { label: 'Dokümantasyon', id: 'docs' as ViewType },
                 { label: 'Entegrasyonlar', id: 'integrations' as ViewType },
+                { label: 'Arama Sonuçları', id: 'search-results' as ViewType },
+                { label: 'Şartlar & Gizlilik', id: 'terms' as ViewType },
                 { label: 'S.S.S.', id: 'faq' as ViewType },
                 { label: 'Bakım Modu', id: 'maintenance' as ViewType },
                 { label: '404 Hatası', id: '404' as ViewType },
@@ -97,12 +104,26 @@ const MENU_SECTIONS: MenuSection[] = [
       ]
     },
     {
-      title: 'Arayüz Kütüphanesi',
+      title: 'Tasarım Sistemi',
       items: [
+        { 
+            icon: Palette, 
+            label: 'Temel Yapı',
+            children: [
+                { label: 'Renk Paleti', id: 'colors' as ViewType },
+                { label: 'Tipografi', id: 'typography' as ViewType },
+                { label: 'Gölgeler & Sınırlar', id: 'shadows' as ViewType },
+                { label: 'İkon Seti', id: 'icons' as ViewType },
+            ]
+        },
         { 
             icon: Component, 
             label: 'Bileşenler',
             children: [
+                { label: 'Butonlar', id: 'buttons' as ViewType },
+                { label: 'Kart Tasarımları', id: 'cards' as ViewType },
+                { label: 'Boş Durumlar', id: 'empty-states' as ViewType },
+                { label: 'İskelet Yapılar', id: 'skeletons' as ViewType },
                 { label: 'UI Elementleri', id: 'ui-elements' as ViewType },
                 { label: 'Widget Kütüphanesi', id: 'widgets' as ViewType },
                 { label: 'Form Elemanları', id: 'forms' as ViewType },

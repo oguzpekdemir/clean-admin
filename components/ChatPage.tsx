@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Search, MoreHorizontal, Phone, Video, Send, Paperclip, Mic, Image, Smile, Check, CheckCheck, ArrowLeft, ChevronLeft, Plus } from 'lucide-react';
 
@@ -77,7 +78,7 @@ const ChatPage: React.FC = () => {
 
   useEffect(() => {
     scrollToBottom();
-  }, [activeMessages, activeUser]);
+  }, [activeMessages, activeUser, isTyping]);
 
   const handleSendMessage = () => {
       if (!messageInput.trim() || activeUser === null) return;
@@ -97,7 +98,7 @@ const ChatPage: React.FC = () => {
 
       setMessageInput('');
 
-      // Simulate Auto Reply
+      // Simulate Auto Reply - Faster response for better UX
       setIsTyping(true);
       setTimeout(() => {
           const reply: Message = {
@@ -111,7 +112,7 @@ const ChatPage: React.FC = () => {
               [activeUser]: [...(prev[activeUser] || []), reply]
           }));
           setIsTyping(false);
-      }, 2000);
+      }, 600); // Reduced delay to 600ms
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -224,9 +225,9 @@ const ChatPage: React.FC = () => {
                         ) : (
                             <div className="flex flex-col items-center justify-center h-full text-gray-400">
                                 <div className="w-16 h-16 bg-gray-100 dark:bg-neutral-900 rounded-full flex items-center justify-center mb-4">
-                                    <Smile className="w-8 h-8" />
+                                    <Smile className="w-10 h-10 opacity-50" />
                                 </div>
-                                <p>Henüz mesaj yok. Merhaba de!</p>
+                                <p>Sohbet başlatmak için soldan bir kişi seçin.</p>
                             </div>
                         )}
                         

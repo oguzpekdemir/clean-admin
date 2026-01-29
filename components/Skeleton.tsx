@@ -2,8 +2,8 @@
 import React from 'react';
 
 // Base Skeleton Primitive
-export const Skeleton: React.FC<{ className?: string }> = ({ className }) => (
-  <div className={`animate-pulse bg-gray-200 dark:bg-neutral-800 rounded ${className}`} />
+export const Skeleton: React.FC<{ className?: string; style?: React.CSSProperties }> = ({ className, style }) => (
+  <div className={`animate-pulse bg-gray-200 dark:bg-neutral-800 rounded ${className || ''}`} style={style} />
 );
 
 // Specific Skeleton for Stats Cards
