@@ -160,12 +160,12 @@ const DashboardPage: React.FC<DashboardPageProps> = ({ onNavigate }) => {
                                 <div key={i} className="flex-1 flex flex-col items-center group cursor-pointer relative">
                                     <div className="relative w-full flex items-end justify-center h-40 bg-gray-50 dark:bg-neutral-900 rounded-xl">
                                         <div 
-                                            className="w-full bg-black dark:bg-white group-hover:bg-blue-600 dark:group-hover:bg-blue-500 transition-colors duration-300 rounded-xl relative" 
+                                            className="w-full bg-black dark:bg-white group-hover:bg-blue-600 dark:group-hover:bg-blue-500 transition-colors duration-300 rounded-xl flex items-start justify-center pt-2 overflow-hidden" 
                                             style={{ height: `${h}%` }}
                                         >
-                                            <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-black dark:bg-white text-white dark:text-black text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg whitespace-nowrap">
+                                            <span className="text-[10px] font-bold text-white dark:text-black group-hover:text-white dark:group-hover:text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                                                 {h}%
-                                            </div>
+                                            </span>
                                         </div>
                                     </div>
                                     <span className="text-[10px] text-gray-400 dark:text-neutral-500 mt-2 font-medium">
